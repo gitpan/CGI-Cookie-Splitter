@@ -1,0 +1,6 @@
+lib/CGI/Cookie/Splitter.pm
+MANIFEST			This list of files
+META.yml
+t/basic.t
+Makefile.PL
+SIGNATURE    Added here by Module::Build

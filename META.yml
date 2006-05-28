@@ -1,0 +1,15 @@
+---
+name: CGI-Cookie-Splitter
+version: 0.01
+author:
+  - 'Yuval Kogman, C<nothingmuch@woobling.org>'
+abstract: Split big cookies into smaller ones.
+license: perl
+requires:
+  CGI::Simple::Util: 0
+  Test::use::ok: 0
+provides:
+  CGI::Cookie::Splitter:
+    file: lib/CGI/Cookie/Splitter.pm
+    version: 0.01
+generated_by: Module::Build version 0.2611
