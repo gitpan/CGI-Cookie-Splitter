@@ -6,7 +6,7 @@ use strict;
 use warnings;
 
 use vars qw/$VERSION/;
-$VERSION = "0.01";
+$VERSION = "0.02";
 
 use Scalar::Util qw/blessed/;
 use CGI::Simple::Util qw/escape unescape/;
@@ -47,7 +47,7 @@ sub do_split_cookie {
 	my $tail = $self->new_cookie( $head, value => '', name => $self->mangle_name_next( $head->name ) );
 
 	my $max_value_size = $self->size - ( $self->cookie_size( $head ) - length( escape($head->value) ) );
-	$max_value_size -= 10; # account for overhead the cookie serializer might add
+	$max_value_size -= 30; # account for overhead the cookie serializer might add
 
 	die "Internal math error, please file a bug for CGI::Cookie::Splitter: max size should be > 0, but is $max_value_size (perhaps other attrs are too big?)"
 		unless ( $max_value_size > 0 );
@@ -249,7 +249,15 @@ using a different criteria then you should look into that.
 
 =head1 SEE ALSO
 
-L<CGI::Cookie>, L<CGI::Simple::Cookie>, L<http://www.cookiecutter.com/>, RFC 2109
+L<CGI::Cookie>, L<CGI::Simple::Cookie>, L<http://www.cookiecutter.com/>,
+L<http://perlcabal.org/~gaal/metapatch/images/copper-moose-cutter.jpg>,
+RFC 2109
+
+=head1 VERSION CONTROL
+
+This module is maintained using Darcs. You can get the latest version from
+L<http://nothingmuch.woobling.org/CGI-Cookie-Splitter/>, and use C<darcs send>
+to commit changes.
 
 =head1 AUTHOR
 

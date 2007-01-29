@@ -1,15 +1,13 @@
----
-name: CGI-Cookie-Splitter
-version: 0.01
-author:
-  - 'Yuval Kogman, C<nothingmuch@woobling.org>'
-abstract: Split big cookies into smaller ones.
-license: perl
-requires:
-  CGI::Simple::Util: 0
-  Test::use::ok: 0
-provides:
-  CGI::Cookie::Splitter:
-    file: lib/CGI/Cookie/Splitter.pm
-    version: 0.01
-generated_by: Module::Build version 0.2611
+--- #YAML:1.0
+name:                CGI-Cookie-Splitter
+version:             0.02
+abstract:            ~
+license:             ~
+generated_by:        ExtUtils::MakeMaker version 6.31
+distribution_type:   module
+requires:     
+    CGI::Simple:                   0
+    Test::use::ok:                 0
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
+    version: 1.2

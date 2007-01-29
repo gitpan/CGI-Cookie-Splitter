@@ -1,5 +1,5 @@
 This file contains message digests of all files listed in MANIFEST,
-signed via the Module::Signature module, version 0.53.
+signed via the Module::Signature module, version 0.55.
 
 To verify the content in this distribution, first make sure you have
 Module::Signature installed, then type:
@@ -14,15 +14,16 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 5ff0c56368f7aa5324d79706c4acdf3957bce7ab MANIFEST
-SHA1 70eb201bae366ac01dc275d4c52437f6ba6cbe1f META.yml
-SHA1 7d7a70066ee86b40686b28154cfb0fd76a063cd3 Makefile.PL
-SHA1 1844ec6ce2eecc50b8ea188056f2d63a127734aa lib/CGI/Cookie/Splitter.pm
-SHA1 01c9d2009154cf6ebf2c90550d2d3f27e6fb7d9d t/basic.t
+SHA1 99a155c9e71068e0400c2a9bcd7e2558ab371971 Changes
+SHA1 51c1f8e15be8846610b29221f125abae9ac3f1db MANIFEST
+SHA1 dfeac16a99140b9932f6e1c643f4665ac38700c1 META.yml
+SHA1 45c656a21b65c90777a5b82e657ab592f351e2ac Makefile.PL
+SHA1 a252fbec4634a7fe8e5b3c412ddd5c242e672cb8 lib/CGI/Cookie/Splitter.pm
+SHA1 f1e217abe342e8544c172e30cd520c5138f18f6f t/basic.t
 -----BEGIN PGP SIGNATURE-----
-Version: GnuPG v1.4.1 (Darwin)
+Version: GnuPG v1.4.5 (Darwin)
 
-iD8DBQFEei2NVCwRwOvSdBgRAtqjAJwPUCeaqfqfILKUJ29NvwjCbXm1uQCfVnmC
-3kHpnF7/AY381yhsBhDPah8=
-=CAys
+iD8DBQFFvj/TVCwRwOvSdBgRAsUsAJ4/4seg3j1V6027HH6j8tuWTeBTPgCfR+QY
+DT1VzPUubjjL4hIePZiaK0c=
+=OfSm
 -----END PGP SIGNATURE-----
