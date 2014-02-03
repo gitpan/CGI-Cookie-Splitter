@@ -1,13 +1,23 @@
---- #YAML:1.0
-name:                CGI-Cookie-Splitter
-version:             0.02
-abstract:            ~
-license:             ~
-generated_by:        ExtUtils::MakeMaker version 6.31
-distribution_type:   module
-requires:     
-    CGI::Simple:                   0
-    Test::use::ok:                 0
+---
+abstract: unknown
+author:
+  - unknown
+build_requires:
+  ExtUtils::MakeMaker: 0
+configure_requires:
+  ExtUtils::MakeMaker: 0
+dynamic_config: 1
+generated_by: 'ExtUtils::MakeMaker version 6.88, CPAN::Meta::Converter version 2.133380'
+license: unknown
 meta-spec:
-    url:     http://module-build.sourceforge.net/META-spec-v1.2.html
-    version: 1.2
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: CGI-Cookie-Splitter
+no_index:
+  directory:
+    - t
+    - inc
+requires:
+  CGI::Simple: 0
+  Test::use::ok: 0
+version: 0.03

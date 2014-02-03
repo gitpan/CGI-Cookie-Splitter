@@ -6,7 +6,7 @@ use strict;
 use warnings;
 
 use vars qw/$VERSION/;
-$VERSION = "0.02";
+$VERSION = "0.03";
 
 use Scalar::Util qw/blessed/;
 use CGI::Simple::Util qw/escape unescape/;
@@ -101,12 +101,14 @@ sub cookie_size {
 sub new_cookie {
 	my ( $self, $cookie, %params ) = @_;
 
+    my %out_params;
 	for (qw/name secure path domain expires value/) {
-		next if exists $params{$_};
-		$params{"-$_"} = $cookie->$_;
+		$out_params{"-$_"} = (exists($params{$_})
+			? $params{$_} : $cookie->$_
+		);
 	}
 
-	blessed($cookie)->new( %params );
+	blessed($cookie)->new( %out_params );
 }
 
 sub should_split {
@@ -129,7 +131,7 @@ sub join {
 		}
 	}
 
-	foreach my $name ( keys %split ) { 
+	foreach my $name ( sort { $a cmp $b } keys %split ) {
 		my $split_cookie = $split{$name};
 		croak "The cookie $name is missing some chunks" if grep { !defined } @$split_cookie;
 		push @ret, $self->join_cookie( $name => @$split_cookie );
@@ -151,12 +153,12 @@ sub join_value {
 sub mangle_name_next {
 	my ( $self, $mangled ) = @_;
 	my ( $name, $index ) = $self->demangle_name( $mangled );
-	$self->mangle_name( $name, $index+1 ); # can't trust magic incr because it might overflow and fudge 'chunk'
+	$self->mangle_name( $name, 1 + ((defined($index) ? $index : 0)) ); # can't trust magic incr because it might overflow and fudge 'chunk'
 }
 
 sub mangle_name {
 	my ( $self, $name, $index ) = @_;
-	return sprintf '_bigcookie_%s_chunk%d', $name, $index;
+	return sprintf '_bigcookie_%s_chunk%d', +(defined($name) ? $name : ''), $index;
 }
 
 sub demangle_name {
